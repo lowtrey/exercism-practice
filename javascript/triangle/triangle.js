@@ -1,22 +1,33 @@
-//
-// This is only a SKELETON file for the 'Triangle' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class Triangle {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(sideOne, sideTwo, sideThree) {
+    this.sides = [sideOne, sideTwo, sideThree].sort((a, b) => a - b);
   }
 
   isEquilateral() {
-    throw new Error("Remove this statement and implement this function");
+    return (
+      this.sides[0] > 0 &&
+      this.sides[0] === this.sides[1] &&
+      this.sides[0] === this.sides[2]
+    );
   }
 
   isIsosceles() {
-    throw new Error("Remove this statement and implement this function");
+    return (
+      this.sides[0] > 0 &&
+      this.sides[0] + this.sides[1] >= this.sides[2] &&
+      (this.sides[0] === this.sides[1] ||
+        this.sides[0] === this.sides[2] ||
+        this.sides[1] === this.sides[2])
+    );
   }
 
   isScalene() {
-    throw new Error("Remove this statement and implement this function");
+    return (
+      this.sides[0] > 0 &&
+      this.sides[0] + this.sides[1] >= this.sides[2] &&
+      this.sides[0] !== this.sides[1] &&
+      this.sides[0] !== this.sides[2] &&
+      this.sides[1] !== this.sides[2]
+    );
   }
 }
